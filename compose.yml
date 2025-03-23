@@ -1,0 +1,17 @@
+docker-compose.yml-The Compose specification  establishes  astandart for the definition of multi -container plafform 
+
+version:'3'
+service:
+   database:
+      image: postgres:16.3-alpine3.20
+      environment:
+        POSTGRES_DB: testdb
+        POSTGRES_USER: testuser
+        POSTGRES_PASSWORD: secret
+      ports:
+        -5432:5432
+        volumes:
+     @  -postgres-storage:/var/lib/postgresql/data
+        volumes:
+          postgres-storage: {}
+
